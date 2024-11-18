@@ -7,12 +7,12 @@ public class CalcMain {
         Scanner input = new Scanner(System.in);
         System.out.println("enter number");
         String a = input.nextLine();
-        System.out.println(a);
+
         String[] stringArray = a.split("");
 
+
         List<String> finalList = new ArrayList<>();
-        String value = "";
-        String previous = "";
+        String value="";
 
         for (String s : stringArray) {
             if (s.equals("0") || s.equals("1") || s.equals("2")
@@ -22,7 +22,6 @@ public class CalcMain {
                     || s.equals("9")
             ) {
                 value += s;
-                previous = s;
             }
             else if (s.equals("+")) {
                 finalList.add(value);
