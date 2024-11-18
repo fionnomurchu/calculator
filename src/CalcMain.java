@@ -14,7 +14,8 @@ public class CalcMain {
         List<String> finalList = new ArrayList<>();
         String value="";
 
-        for (String s : stringArray) {
+        for (String s : stringArray)
+        {
             if (s.equals("0") || s.equals("1") || s.equals("2")
                     || s.equals("3") || s.equals("4")
                     || s.equals("5") || s.equals("6")
@@ -23,30 +24,21 @@ public class CalcMain {
             ) {
                 value += s;
             }
-            else if (s.equals("+")) {
+
+
+            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/")))
+            {
                 finalList.add(value);
-                finalList.add("+");
+                finalList.add(s);
                 value = "";
             }
-            else if (s.equals("-")) {
-                finalList.add(value);
-                finalList.add("-");
-                value = "";
-            }
-            else if (s.equals("*")) {
-                finalList.add(value);
-                finalList.add("*");
-                value = "";
-            }
-            else if (s.equals("/")) {
-                finalList.add(value);
-                finalList.add("/");
-                value = "";
-            }
+
         }
+
         finalList.add(value);
 
-        for (String s : finalList) {
+        for (String s : finalList)
+        {
             System.out.print(s + " ");
         }
     }
