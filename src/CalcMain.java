@@ -25,14 +25,12 @@ public class CalcMain {
                 value += s;
             }
 
-            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/")))
+            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
+            || s.equals("^"))
             {
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
-            }
-            else if (s.equals("^")){
-                value += s;
             }
             else{
                 System.out.print("Invalid input");
@@ -47,6 +45,29 @@ public class CalcMain {
             System.out.print(s + " ");
         }
         System.out.println();
+
+
+        //power
+        for(int counter=0;counter< finalList.size();counter++) {
+            if (finalList.get(counter).equals("^")) {
+                hello = Calculations.power(finalList.get(counter - 1), finalList.get(counter + 1));
+                finalList.remove(counter + 0);
+
+
+                finalList.remove(counter + 0);
+                finalList.set(counter - 1, hello);
+                counter -= counter;
+
+
+                for (String s : finalList) {
+                    System.out.print(s + " ");
+                }
+                System.out.println();
+            }
+        }
+
+
+
 
         //multiply
         for(int counter=0;counter< finalList.size();counter++) {
