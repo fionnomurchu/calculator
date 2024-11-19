@@ -20,7 +20,7 @@ public class CalcMain {
                     || s.equals("3") || s.equals("4")
                     || s.equals("5") || s.equals("6")
                     || s.equals("7") || s.equals("8")
-                    || s.equals("9")
+                    || s.equals("9") || s.equals(".")
             ) {
                 value += s;
             }
