@@ -45,8 +45,9 @@ public class Calculations {
         int i = 1;
         double constant = number1;
 
-        while (i < number2) {
+        while (number2 != 1) {
             number1 = number1 * constant;
+            number2 -= 1;
         }
         return String.valueOf(number1);
     }
