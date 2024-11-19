@@ -1,12 +1,31 @@
 public class Calculations {
 
 
-    static String hi(String a,String b){
+    static String add(String a,String b){
 
         int number1 = Integer.parseInt(a);
         int number2 = Integer.parseInt(b);
 
         int c=number1+number2;
+        return String.valueOf(c);
+    }
+
+
+    static String subtract(String a,String b){
+
+        int number1 = Integer.parseInt(a);
+        int number2 = Integer.parseInt(b);
+
+        int c=number1-number2;
+        return String.valueOf(c);
+    }
+
+    static String multiply(String a,String b){
+
+        int number1 = Integer.parseInt(a);
+        int number2 = Integer.parseInt(b);
+
+        int c=number1*number2;
         return String.valueOf(c);
     }
 
