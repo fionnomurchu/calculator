@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CalcMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("enter sum");
+        System.out.print("Enter your sum: ");
         String a = input.nextLine();
         String hello;
         String[] stringArray = a.split("");
@@ -25,11 +25,16 @@ public class CalcMain {
                 value += s;
             }
 
-            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/")))
+            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
+            || s.equals("^"))
             {
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
+            }
+            else{
+                System.out.print("Invalid input");
+                break;
             }
         }
 
@@ -40,6 +45,26 @@ public class CalcMain {
             System.out.print(s + " ");
         }
         System.out.println();
+
+
+        //power
+        for(int counter=0;counter< finalList.size();counter++) {
+            if (finalList.get(counter).equals("^")) {
+                hello = Calculations.power(finalList.get(counter - 1), finalList.get(counter + 1));
+                finalList.remove(counter + 0);
+
+
+                finalList.remove(counter + 0);
+                finalList.set(counter - 1, hello);
+                counter -= counter;
+
+
+                for (String s : finalList) {
+                    System.out.print(s + " ");
+                }
+                System.out.println();
+            }
+        }
 
 
 
