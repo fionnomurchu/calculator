@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CalcMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("enter sum");
+        System.out.print("Enter your sum: ");
         String a = input.nextLine();
         String hello;
         String[] stringArray = a.split("");
@@ -31,6 +31,13 @@ public class CalcMain {
                 finalList.add(s);
                 value = "";
             }
+            else if (s.equals("^")){
+                value += s;
+            }
+            else{
+                System.out.print("Invalid input");
+                break;
+            }
         }
 
         finalList.add(value);
@@ -40,9 +47,6 @@ public class CalcMain {
             System.out.print(s + " ");
         }
         System.out.println();
-
-
-
 
         //multiply
         for(int counter=0;counter< finalList.size();counter++) {
