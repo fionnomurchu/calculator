@@ -3,29 +3,38 @@ public class Calculations {
 
     static String add(String a,String b){
 
-        int number1 = Integer.parseInt(a);
-        int number2 = Integer.parseInt(b);
+        double number1 = Double.parseDouble(a);
+        double number2 = Double.parseDouble(b);
 
-        int c=number1+number2;
+        double c=number1+number2;
         return String.valueOf(c);
     }
 
 
     static String subtract(String a,String b){
 
-        int number1 = Integer.parseInt(a);
-        int number2 = Integer.parseInt(b);
+        double number1 = Double.parseDouble(a);
+        double number2 = Double.parseDouble(b);
 
-        int c=number1-number2;
+        double c=number1-number2;
         return String.valueOf(c);
     }
 
     static String multiply(String a,String b){
 
-        int number1 = Integer.parseInt(a);
-        int number2 = Integer.parseInt(b);
+        double number1 = Double.parseDouble(a);
+        double number2 = Double.parseDouble(b);
 
-        int c=number1*number2;
+        double c=number1*number2;
+        return String.valueOf(c);
+    }
+
+    static String divide(String a,String b){
+
+        double number1 = Double.parseDouble(a);
+        double number2 = Double.parseDouble(b);
+
+        double c=number1/number2;
         return String.valueOf(c);
     }
 
