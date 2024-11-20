@@ -42,7 +42,6 @@ public class Calculations {
         double number1 = Double.parseDouble(a);
         double number2 = Double.parseDouble(b);
 
-        int i = 1;
         double constant = number1;
 
         while (number2 != 1) {

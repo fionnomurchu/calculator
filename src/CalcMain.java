@@ -1,3 +1,5 @@
+import com.sun.jdi.ArrayReference;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -9,13 +11,13 @@ public class CalcMain {
         String a = input.nextLine();
         String hello;
         String[] stringArray = a.split("");
+        String iteration1="";
 
 
         ArrayList<String> finalList = new ArrayList<>();
-        String value="";
+        String value = "";
 
-        for (String s : stringArray)
-        {
+        for (String s : stringArray) {
             if (s.equals("0") || s.equals("1") || s.equals("2")
                     || s.equals("3") || s.equals("4")
                     || s.equals("5") || s.equals("6")
@@ -23,150 +25,78 @@ public class CalcMain {
                     || s.equals("9") || s.equals(".")
             ) {
                 value += s;
-            }
-
-            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
-            || s.equals("^"))
-            {
+            } else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
+                    || (s.equals("^")) || (s.equals("(")) || (s.equals(")"))) {
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
-            }
-            else{
+            } else {
                 System.out.print("Invalid input");
                 break;
             }
         }
-
         finalList.add(value);
 
-        for (String s : finalList)
-        {
+
+        //prints string of input
+        for (String s : finalList) {
             System.out.print(s + " ");
         }
         System.out.println();
 
 
-        //power
-        for(int counter=0;counter< finalList.size();counter++) {
-            if (finalList.get(counter).equals("^")) {
-                hello = Calculations.power(finalList.get(counter - 1), finalList.get(counter + 1));
-                finalList.remove(counter + 0);
 
-
-                finalList.remove(counter + 0);
-                finalList.set(counter - 1, hello);
-                counter -= counter;
-
-
-                for (String s : finalList) {
-                    System.out.print(s + " ");
-                }
-                System.out.println();
+        //checkforbrackets
+        for (int counter = 0; counter < finalList.size(); counter++) {
+            if (finalList.get(counter).equals("(")) {
+                break;
+            }
+            if (counter== finalList.size()-1){
+                System.out.println(Main.bro(finalList));
             }
         }
 
 
+while(finalList.contains("(")) {
 
+    //brackets
+    int brace = 0;
+    int maxbrace = 0;
+    int maxcounter = 0;
+    for (int counter = 0; counter < finalList.size(); counter++) {
+        if (finalList.get(counter).equals("(")) {
+            maxcounter = counter;
+            brace++;
+        }
+    }
+    maxbrace = brace;
+    int counter2 = 1;
+    ArrayList<String> subList = null;
+    ArrayList<String> subList1 = null;
+    for (int counter = 0; counter < finalList.size(); counter++) {
+        if (finalList.get(counter).equals(")")) {
+            brace--;
 
-        //multiply
-        for(int counter=0;counter< finalList.size();counter++) {
-            if (finalList.get(counter).equals("*")) {
-                hello = Calculations.multiply(finalList.get(counter - 1), finalList.get(counter + 1));
-                finalList.remove(counter + 0);
+            if (maxbrace - brace == counter2) {
+                subList = new ArrayList<>(finalList.subList(maxcounter + 1, counter));
+                subList1 = new ArrayList<>(finalList.subList(maxcounter, counter + 1));
+                finalList.subList(maxcounter, counter + 1).clear();
+                System.out.println(finalList);
+                counter++;
 
-
-                finalList.remove(counter + 0);
-                finalList.set(counter - 1, hello);
-                counter -= counter;
-
-
-                for (String s : finalList) {
-                    System.out.print(s + " ");
-                }
-                System.out.println();
+                System.out.println(subList);
+                iteration1 = Main.bro(subList);
+                System.out.println(Main.bro(subList));
+                finalList.add(maxcounter, iteration1);
+                finalList.removeIf(s -> s == null || s.isEmpty());
+                System.out.println(finalList);
             }
         }
+    }
 
 
-
-        //division
-        for(int counter=0;counter< finalList.size();counter++) {
-            if (finalList.get(counter).equals("/")) {
-                hello = Calculations.divide(finalList.get(counter - 1), finalList.get(counter + 1));
-                finalList.remove(counter + 0);
-
-
-                finalList.remove(counter + 0);
-                finalList.set(counter - 1, hello);
-                counter =0;
-
-
-                for (String s : finalList) {
-                    System.out.print(s + " ");
-                }
-                System.out.println();
-            }
-        }
-
-      //addition and subtraction
-        for(int counter1=0;counter1< finalList.size();counter1++)
-        {
-
-            //addition
-            if(finalList.get(counter1).equals("+"))
-            {
-                hello = Calculations.add(finalList.get(counter1-1),finalList.get(counter1+1));
-                finalList.remove(counter1 +0);
-                finalList.remove(counter1 +0);
-               finalList.set(counter1-1,hello);
-               counter1=0;
-
-
-                for (String s : finalList)
-                {
-                    System.out.print(s + " ");
-                }
-                System.out.println();
-            }
-
-
-            //subtraction
-            if(finalList.get(counter1).equals("-"))
-            {
-                hello = Calculations.subtract(finalList.get(counter1-1),finalList.get(counter1+1));
-                finalList.remove(counter1 +0);
-
-
-                finalList.remove(counter1 +0);
-                finalList.set(counter1-1,hello);
-                counter1=0;
-
-                for (String s : finalList)
-                {
-                    System.out.print(s + " ");
-                }
-                System.out.println();
-
-            }
-
-        }
-
-
-
-
-
-
-
-
-
-        for (String s : finalList)
-        {
-            System.out.print(s + " ");
-        }
-
-
-
+}
+        System.out.println(Main.bro(finalList));
 
     }
 }
