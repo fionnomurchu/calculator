@@ -6,9 +6,6 @@ public static String bro(ArrayList<String> a) {
     ArrayList<String> finalList = a;
     String result="";
 
-
-
-
     //power
     for (
             int counter = 0; counter < finalList.size(); counter++) {
@@ -49,7 +46,6 @@ public static String bro(ArrayList<String> a) {
             System.out.println();
         }
     }
-
 
     //division
     for (
@@ -105,11 +101,8 @@ public static String bro(ArrayList<String> a) {
                 System.out.print(s + " ");
             }
             System.out.println();
-
         }
-
     }
 return result;
 }
-
 }
