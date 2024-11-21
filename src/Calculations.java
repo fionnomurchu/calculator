@@ -46,6 +46,17 @@ public class Calculations {
 
         return String.valueOf(number1);
     }
+
+    static String factorial(String a){
+        double number1 = Double.parseDouble(a);
+        double result = 1;
+
+        while(number1 != 0){
+            result *= number1;
+            number1 -= 1;
+        }
+        return String.valueOf(result);
+    }
 }
 
 
