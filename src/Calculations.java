@@ -52,8 +52,14 @@ public class Calculations {
         double result = 1;
 
         while(number1 != 0){
-            result *= number1;
-            number1 -= 1;
+            if(Math.signum(number1) == 1.00){
+                result *= number1;
+                number1 -= 1;
+            }
+            else if(Math.signum(number1) == -1.00){
+                result *= number1;
+                number1 += 1;
+            }
         }
         return String.valueOf(result);
     }
