@@ -27,6 +27,7 @@ public class CalcMain {
                 value += s;
             } else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
                     || (s.equals("^")) || (s.equals("(")) || (s.equals(")")) || (s.equals("!"))) {
+              
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
