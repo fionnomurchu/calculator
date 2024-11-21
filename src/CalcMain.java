@@ -1,4 +1,4 @@
-
+import com.sun.jdi.ArrayReference;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -9,7 +9,6 @@ public class CalcMain {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your sum: ");
         String a = input.nextLine();
-
         String[] stringArray = a.split("");
         String iteration1="";
 
@@ -23,15 +22,18 @@ public class CalcMain {
                     || s.equals("5") || s.equals("6")
                     || s.equals("7") || s.equals("8")
                     || s.equals("9") || s.equals(".")
+                    || s.equals("-") & value.isEmpty()
             ) {
                 value += s;
             } else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
-                    || (s.equals("^")) || (s.equals("(")) || (s.equals(")"))||(s.equals("!"))) {
+                    || (s.equals("^")) || (s.equals("(")) || (s.equals(")")) || (s.equals("!"))) {
+              
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
             } else {
                 System.out.print("Invalid input");
+
                 break;
             }
         }
@@ -46,7 +48,7 @@ public class CalcMain {
 
 
 
-        //checkforbrackets
+        //check for brackets
         for (int counter = 0; counter < finalList.size(); counter++) {
             if (finalList.get(counter).equals("(")) {
                 break;
@@ -72,14 +74,14 @@ while(finalList.contains("(")) {
     maxbrace = brace;
     int counter2 = 1;
     ArrayList<String> subList = null;
-
+    ArrayList<String> subList1 = null;
     for (int counter = 0; counter < finalList.size(); counter++) {
         if (finalList.get(counter).equals(")")) {
             brace--;
 
             if (maxbrace - brace == counter2) {
                 subList = new ArrayList<>(finalList.subList(maxcounter + 1, counter));
-
+                subList1 = new ArrayList<>(finalList.subList(maxcounter, counter + 1));
                 finalList.subList(maxcounter, counter + 1).clear();
                 System.out.println(finalList);
                 counter++;
@@ -93,6 +95,8 @@ while(finalList.contains("(")) {
             }
         }
     }
+
+
 }
         System.out.println(Main.bro(finalList));
 
