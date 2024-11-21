@@ -35,6 +35,7 @@ public static String bro(ArrayList<String> a) {
 
 
             finalList.remove(counter + 0);
+            finalList.set(counter - 1, result);
             counter -= counter;
 
 
