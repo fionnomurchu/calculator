@@ -42,12 +42,8 @@ public class Calculations {
         double number1 = Double.parseDouble(a);
         double number2 = Double.parseDouble(b);
 
-        double constant = number1;
+        number1 = Math.pow(number1, number2);
 
-        while (number2 != 1) {
-            number1 = number1 * constant;
-            number2 -= 1;
-        }
         return String.valueOf(number1);
     }
 }

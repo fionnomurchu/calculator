@@ -4,7 +4,7 @@ public class Main {
 
 public static String bro(ArrayList<String> a) {
     ArrayList<String> finalList = a;
-    String hello="";
+    String result="";
 
 
 
@@ -13,12 +13,12 @@ public static String bro(ArrayList<String> a) {
     for (
             int counter = 0; counter < finalList.size(); counter++) {
         if (finalList.get(counter).equals("^")) {
-            hello = Calculations.power(finalList.get(counter - 1), finalList.get(counter + 1));
+            result = Calculations.power(finalList.get(counter - 1), finalList.get(counter + 1));
             finalList.remove(counter + 0);
 
 
             finalList.remove(counter + 0);
-            finalList.set(counter - 1, hello);
+            finalList.set(counter - 1, result);
             counter -= counter;
 
 
@@ -34,12 +34,12 @@ public static String bro(ArrayList<String> a) {
     for (
             int counter = 0; counter < finalList.size(); counter++) {
         if (finalList.get(counter).equals("*")) {
-            hello = Calculations.multiply(finalList.get(counter - 1), finalList.get(counter + 1));
+            result = Calculations.multiply(finalList.get(counter - 1), finalList.get(counter + 1));
             finalList.remove(counter + 0);
 
 
             finalList.remove(counter + 0);
-            finalList.set(counter - 1, hello);
+            finalList.set(counter - 1, result);
             counter -= counter;
 
 
@@ -55,12 +55,12 @@ public static String bro(ArrayList<String> a) {
     for (
             int counter = 0; counter < finalList.size(); counter++) {
         if (finalList.get(counter).equals("/")) {
-            hello = Calculations.divide(finalList.get(counter - 1), finalList.get(counter + 1));
+            result = Calculations.divide(finalList.get(counter - 1), finalList.get(counter + 1));
             finalList.remove(counter + 0);
 
 
             finalList.remove(counter + 0);
-            finalList.set(counter - 1, hello);
+            finalList.set(counter - 1, result);
             counter = 0;
 
 
@@ -77,10 +77,10 @@ public static String bro(ArrayList<String> a) {
 
         //addition
         if (finalList.get(counter1).equals("+")) {
-            hello = Calculations.add(finalList.get(counter1 - 1), finalList.get(counter1 + 1));
+            result = Calculations.add(finalList.get(counter1 - 1), finalList.get(counter1 + 1));
             finalList.remove(counter1 + 0);
             finalList.remove(counter1 + 0);
-            finalList.set(counter1 - 1, hello);
+            finalList.set(counter1 - 1, result);
             counter1 = 0;
 
 
@@ -93,12 +93,12 @@ public static String bro(ArrayList<String> a) {
 
         //subtraction
         if (finalList.get(counter1).equals("-")) {
-            hello = Calculations.subtract(finalList.get(counter1 - 1), finalList.get(counter1 + 1));
+            result = Calculations.subtract(finalList.get(counter1 - 1), finalList.get(counter1 + 1));
             finalList.remove(counter1 + 0);
 
 
             finalList.remove(counter1 + 0);
-            finalList.set(counter1 - 1, hello);
+            finalList.set(counter1 - 1, result);
             counter1 = 0;
 
             for (String s : finalList) {
@@ -109,7 +109,7 @@ public static String bro(ArrayList<String> a) {
         }
 
     }
-return hello;
+return result;
 }
 
 }
