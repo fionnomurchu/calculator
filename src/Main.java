@@ -26,6 +26,26 @@ public static String bro(ArrayList<String> a) {
         }
     }
 
+    //factorial
+    for (
+            int counter = 0; counter < finalList.size(); counter++) {
+        if (finalList.get(counter).equals("!")) {
+            result = Calculations.factorial(finalList.get(counter - 1));
+            finalList.remove(counter + 0);
+
+
+            finalList.remove(counter + 0);
+            counter -= counter;
+
+
+            for (String s : finalList) {
+                System.out.print(s + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
 
     //multiply
     for (
