@@ -1,111 +1,104 @@
+import com.sun.jdi.ArrayReference;
+
 import java.util.Scanner;
 import java.util.ArrayList;
+
 
 public class CalcMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("enter sum");
+        System.out.print("Enter your sum: ");
         String a = input.nextLine();
-        String hello;
         String[] stringArray = a.split("");
+        String iteration1="";
+
 
         ArrayList<String> finalList = new ArrayList<>();
         String value = "";
 
-        // Parsing logic
         for (String s : stringArray) {
-            if (s.matches("[0-9.]")) { // Matches numbers and decimals
+            if (s.equals("0") || s.equals("1") || s.equals("2")
+                    || s.equals("3") || s.equals("4")
+                    || s.equals("5") || s.equals("6")
+                    || s.equals("7") || s.equals("8")
+                    || s.equals("9") || s.equals(".")
+                    || s.equals("-") & value.isEmpty()
+            ) {
                 value += s;
-            } else if (s.matches("[+\\-*/]")) { // Matches operators
-                if (!value.isEmpty()) {
-                    finalList.add(value); // Add accumulated value
-                }
-                finalList.add(s); // Add operator
+            } else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
+                    || (s.equals("^")) || (s.equals("(")) || (s.equals(")")) || (s.equals("!"))) {
+
+                finalList.add(value);
+                finalList.add(s);
                 value = "";
-            } else if (s.matches("[a-zA-Z]")) { // Matches letters (for sin, cos, tan)
-                value += s;
-                if (value.equals("sin") || value.equals("cos") || value.equals("tan")) {
-                    finalList.add(value); // Add sin, cos, or tan as a separate element
-                    value = ""; // Reset for the next part
-                }
             } else {
-                if (!value.isEmpty()) {
-                    finalList.add(value);
-                }
-                value = "";
+                System.out.print("Invalid input");
+
+                break;
             }
         }
-        if (!value.isEmpty()) { // Add any remaining value
-            finalList.add(value);
-        }
+        finalList.add(value);
 
+
+        //prints string of input
         for (String s : finalList) {
             System.out.print(s + " ");
         }
         System.out.println();
 
-        // Handle sin, cos, and tan
+
+
+        //check for brackets
         for (int counter = 0; counter < finalList.size(); counter++) {
-            if (finalList.get(counter).equals("sin")) {
-                hello = Calculations.sin(finalList.get(counter + 1));
-                finalList.remove(counter); // Remove "sin"
-                finalList.set(counter, hello); // Replace the number with result
-                counter--;
-            } else if (finalList.get(counter).equals("cos")) {
-                hello = Calculations.cos(finalList.get(counter + 1));
-                finalList.remove(counter); // Remove "cos"
-                finalList.set(counter, hello); // Replace the number with result
-                counter--;
-            } else if (finalList.get(counter).equals("tan")) {
-                hello = Calculations.tan(finalList.get(counter + 1));
-                finalList.remove(counter); // Remove "tan"
-                finalList.set(counter, hello); // Replace the number with result
-                counter--;
+            if (finalList.get(counter).equals("(")) {
+                break;
+            }
+            if (counter== finalList.size()-1){
+                System.out.println(Main.bro(finalList));
             }
         }
 
-        // Multiply
-        for (int counter = 0; counter < finalList.size(); counter++) {
-            if (finalList.get(counter).equals("*")) {
-                hello = Calculations.multiply(finalList.get(counter - 1), finalList.get(counter + 1));
-                finalList.remove(counter + 0);
-                finalList.remove(counter + 0);
-                finalList.set(counter - 1, hello);
-                counter = 0;
-            }
-        }
 
-        // Division
-        for (int counter = 0; counter < finalList.size(); counter++) {
-            if (finalList.get(counter).equals("/")) {
-                hello = Calculations.divide(finalList.get(counter - 1), finalList.get(counter + 1));
-                finalList.remove(counter + 0);
-                finalList.remove(counter + 0);
-                finalList.set(counter - 1, hello);
-                counter = 0;
-            }
-        }
+        while(finalList.contains("(")) {
 
-        // Addition and subtraction
-        for (int counter1 = 0; counter1 < finalList.size(); counter1++) {
-            if (finalList.get(counter1).equals("+")) {
-                hello = Calculations.add(finalList.get(counter1 - 1), finalList.get(counter1 + 1));
-                finalList.remove(counter1 + 0);
-                finalList.remove(counter1 + 0);
-                finalList.set(counter1 - 1, hello);
-                counter1 = 0;
-            } else if (finalList.get(counter1).equals("-")) {
-                hello = Calculations.subtract(finalList.get(counter1 - 1), finalList.get(counter1 + 1));
-                finalList.remove(counter1 + 0);
-                finalList.remove(counter1 + 0);
-                finalList.set(counter1 - 1, hello);
-                counter1 = 0;
+            //brackets
+            int brace = 0;
+            int maxbrace = 0;
+            int maxcounter = 0;
+            for (int counter = 0; counter < finalList.size(); counter++) {
+                if (finalList.get(counter).equals("(")) {
+                    maxcounter = counter;
+                    brace++;
+                }
             }
-        }
+            maxbrace = brace;
+            int counter2 = 1;
+            ArrayList<String> subList = null;
+            ArrayList<String> subList1 = null;
+            for (int counter = 0; counter < finalList.size(); counter++) {
+                if (finalList.get(counter).equals(")")) {
+                    brace--;
 
-        for (String s : finalList) {
-            System.out.print(s + " ");
+                    if (maxbrace - brace == counter2) {
+                        subList = new ArrayList<>(finalList.subList(maxcounter + 1, counter));
+                        subList1 = new ArrayList<>(finalList.subList(maxcounter, counter + 1));
+                        finalList.subList(maxcounter, counter + 1).clear();
+                        System.out.println(finalList);
+                        counter++;
+
+                        System.out.println(subList);
+                        iteration1 = Main.bro(subList);
+                        System.out.println(Main.bro(subList));
+                        finalList.add(maxcounter, iteration1);
+                        finalList.removeIf(s -> s == null || s.isEmpty());
+                        System.out.println(finalList);
+                    }
+                }
+            }
+
+
         }
-        System.out.println("\nResult: " + finalList.get(0));
+        System.out.println(Main.bro(finalList));
+
     }
 }
