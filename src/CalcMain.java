@@ -28,6 +28,7 @@ public class CalcMain {
             {
 
                 value += s;
+              
             }
             else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
                     || (s.equals("^")) || (s.equals("!"))) {
@@ -72,45 +73,45 @@ public class CalcMain {
         }
 
 
-while(finalList.contains("(")) {
+        while(finalList.contains("(")) {
 
-    //brackets
-    int brace = 0;
-    int maxbrace = 0;
-    int maxcounter = 0;
-    for (int counter = 0; counter < finalList.size(); counter++) {
-        if (finalList.get(counter).equals("(")) {
-            maxcounter = counter;
-            brace++;
-        }
-    }
-    maxbrace = brace;
-    int counter2 = 1;
-    ArrayList<String> subList = null;
-    ArrayList<String> subList1 = null;
-    for (int counter = 0; counter < finalList.size(); counter++) {
-        if (finalList.get(counter).equals(")")) {
-            brace--;
-
-            if (maxbrace - brace == counter2) {
-                subList = new ArrayList<>(finalList.subList(maxcounter + 1, counter));
-                subList1 = new ArrayList<>(finalList.subList(maxcounter, counter + 1));
-                finalList.subList(maxcounter, counter + 1).clear();
-                System.out.println(finalList);
-                counter++;
-
-                System.out.println(subList);
-                iteration1 = Main.bro(subList);
-                System.out.println(Main.bro(subList));
-                finalList.add(maxcounter, iteration1);
-                finalList.removeIf(s -> s == null || s.isEmpty());
-                System.out.println(finalList);
+            //brackets
+            int brace = 0;
+            int maxbrace = 0;
+            int maxcounter = 0;
+            for (int counter = 0; counter < finalList.size(); counter++) {
+                if (finalList.get(counter).equals("(")) {
+                    maxcounter = counter;
+                    brace++;
+                }
             }
+            maxbrace = brace;
+            int counter2 = 1;
+            ArrayList<String> subList = null;
+            ArrayList<String> subList1 = null;
+            for (int counter = 0; counter < finalList.size(); counter++) {
+                if (finalList.get(counter).equals(")")) {
+                    brace--;
+
+                    if (maxbrace - brace == counter2) {
+                        subList = new ArrayList<>(finalList.subList(maxcounter + 1, counter));
+                        subList1 = new ArrayList<>(finalList.subList(maxcounter, counter + 1));
+                        finalList.subList(maxcounter, counter + 1).clear();
+                        System.out.println(finalList);
+                        counter++;
+
+                        System.out.println(subList);
+                        iteration1 = Main.bro(subList);
+                        System.out.println(Main.bro(subList));
+                        finalList.add(maxcounter, iteration1);
+                        finalList.removeIf(s -> s == null || s.isEmpty());
+                        System.out.println(finalList);
+                    }
+                }
+            }
+
+
         }
-    }
-
-
-}
         System.out.println(Main.bro(finalList));
 
     }
