@@ -15,6 +15,7 @@ public class CalcMain {
 
         ArrayList<String> finalList = new ArrayList<>();
         String value = "";
+        String checker = "";
 
         for (String s : stringArray) {
             if (s.equals("0") || s.equals("1") || s.equals("2")
@@ -23,15 +24,27 @@ public class CalcMain {
                     || s.equals("7") || s.equals("8")
                     || s.equals("9") || s.equals(".")
                     || s.equals("-") & value.isEmpty()
-            ) {
+            & !checker.equals("1"))
+            {
+
                 value += s;
-            } else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
-                    || (s.equals("^")) || (s.equals("(")) || (s.equals(")")) || (s.equals("!"))) {
+            }
+            else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
+                    || (s.equals("^")) || (s.equals("!"))) {
               
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
-            } else {
+                checker = "";
+            }
+            else if (s.equals("(") || (s.equals(")"))){
+
+                finalList.add(value);
+                finalList.add(s);
+                value = "";
+                checker = "1";
+            }
+            else {
                 System.out.print("Invalid input");
 
                 break;
