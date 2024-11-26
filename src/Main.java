@@ -34,7 +34,6 @@ public class Main {
                 finalList.remove(counter + 0);
 
 
-                finalList.remove(counter + 0);
                 finalList.set(counter - 1, result);
                 counter -= counter;
 

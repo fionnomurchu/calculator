@@ -21,6 +21,7 @@ public class Menu {
                     || s.equals("-") & value.isEmpty()
                     & !checker.equals("1")) {
                 value += s;
+
             } else if (s.equals("+") || (s.equals("-")) || (s.equals("*")) || (s.equals("/"))
                     || (s.equals("^")) || (s.equals("!"))) {
 
@@ -28,12 +29,14 @@ public class Menu {
                 finalList.add(s);
                 value = "";
                 checker = "";
+
             } else if (s.equals("(") || (s.equals(")"))) {
 
                 finalList.add(value);
                 finalList.add(s);
                 value = "";
                 checker = "1";
+
             } else {
                 System.out.print("Invalid input\n");
                 finalList = Menu.account();
