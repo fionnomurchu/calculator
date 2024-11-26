@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Calculations {
 
     static String add(String a, String b) {
@@ -47,22 +49,22 @@ public class Calculations {
         return String.valueOf(number1);
     }
 
-    static String factorial(String a){
+    static String factorial(String a) {
         double number1 = Double.parseDouble(a);
         double result = 1;
 
-        while(number1 != 0){
-            if(Math.signum(number1) == 1.00){
+        while (number1 != 0) {
+            if (Math.signum(number1) == 1.00) {
                 result *= number1;
                 number1 -= 1;
-            }
-            else if(Math.signum(number1) == -1.00){
+            } else if (Math.signum(number1) == -1.00) {
                 result *= number1;
                 number1 += 1;
             }
         }
         return String.valueOf(result);
     }
+
 }
 
 
