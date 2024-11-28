@@ -50,6 +50,7 @@ public class Menu {
     }
 
     static void featureList(){
-        System.out.println("Features:\nAddition: +\nSubtraction: -");
+        System.out.println("Features:\nAddition: +\nSubtraction: -\nMultiplication: *" +
+                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( )");
     }
 }
