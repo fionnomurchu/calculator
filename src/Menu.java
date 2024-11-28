@@ -48,4 +48,8 @@ public class Menu {
 
         return finalList;
     }
+
+    static void featureList(){
+        System.out.println("Features:\nAddition: +\nSubtraction: -");
+    }
 }
