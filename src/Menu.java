@@ -2,10 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-    static ArrayList<String> account() {
+    public static boolean option1 = false;
+
+    static ArrayList<String> account(String ans) {
+
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your sum: ");
         String a = input.nextLine();
+
         String[] stringArray = a.split("");
 
         ArrayList<String> finalList = new ArrayList<>();
@@ -37,9 +41,14 @@ public class Menu {
                 value = "";
                 checker = "1";
 
-            } else {
+            } else if (s.equals("a") & value.isEmpty()){
+                value = ans;
+            }
+
+            else {
+                System.out.println(s);
                 System.out.print("Invalid input\n");
-                finalList = Menu.account();
+                finalList = Menu.account(ans);
 
                 break;
             }
@@ -48,4 +57,34 @@ public class Menu {
 
         return finalList;
     }
+
+    static void featureList(){
+        System.out.println("Features:\nAddition: +\nSubtraction: -\nMultiplication: *" +
+                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nPrevious Result: a");
+    }
+
+    static boolean options(){
+        Scanner input = new Scanner(System.in);
+        String optionInput;
+
+        if(option1 == false){
+            System.out.println("1 - Enable step by step solution ");
+            optionInput = input.nextLine();
+            if(optionInput.equals("1")){
+                option1 = true;
+                System.out.println("Enabled");
+            }
+        }
+        else{
+            System.out.println("1 - Disable step by step solution ");
+            optionInput = input.nextLine();
+            if(optionInput.equals("1")){
+                option1 = false;
+                System.out.println("Disabled");
+            }
+        }
+        return option1;
+    }
 }
+
+
