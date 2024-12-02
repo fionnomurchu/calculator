@@ -7,13 +7,15 @@ import java.util.ArrayList;
 public class CalcMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        boolean option1 = false;
 
-        System.out.println("Welcome\nFeature list: 1\nCalculator: 2");
+        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
         String option = input.nextLine();
 
         while(true){
             if(option.equals("1")){
                 Menu.featureList();
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
                 option = input.nextLine();
             }
             else if(option.equals("2")){
@@ -23,11 +25,12 @@ public class CalcMain {
 
 
                 //prints string of input
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-
 
 
                 //check for brackets
@@ -35,8 +38,10 @@ public class CalcMain {
                     if (finalList.get(counter).equals("(")) {
                         break;
                     }
-                    if (counter== finalList.size()-1){
-                        System.out.println(Main.bro(finalList));
+                    if (counter == finalList.size()-1){
+                        if(option1) {
+                            System.out.println(Main.bro(finalList, option1));
+                        }
                     }
                 }
 
@@ -69,8 +74,8 @@ public class CalcMain {
                                 counter++;
 
                                 System.out.println(subList);
-                                iteration1 = Main.bro(subList);
-                                System.out.println(Main.bro(subList));
+                                iteration1 = Main.bro(subList, option1);
+                                System.out.println(Main.bro(subList, option1));
                                 finalList.add(maxcounter, iteration1);
                                 finalList.removeIf(s -> s == null || s.isEmpty());
                                 System.out.println(finalList);
@@ -80,8 +85,17 @@ public class CalcMain {
 
 
                 }
-                System.out.println(Main.bro(finalList));
+                Main.bro(finalList, option1);
+                if(!option1){
+                    System.out.println(finalList.get(0));
+                }
+
                 break;
+            }
+            else if(option.equals("3")){
+                option1 = Menu.options();
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+                option = input.nextLine();
             }
             else{
                 System.out.println("Welcome\nFeature list: 1\nCalculator: 2");

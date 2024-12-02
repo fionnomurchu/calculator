@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
+    public static boolean option1 = false;
     static ArrayList<String> account() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your sum: ");
@@ -53,4 +54,29 @@ public class Menu {
         System.out.println("Features:\nAddition: +\nSubtraction: -\nMultiplication: *" +
                 "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( )");
     }
+
+    static boolean options(){
+        Scanner input = new Scanner(System.in);
+        String optionInput;
+
+        if(option1 == false){
+            System.out.println("1 - Enable step by step solution ");
+            optionInput = input.nextLine();
+            if(optionInput.equals("1")){
+                option1 = true;
+                System.out.println("Enabled");
+            }
+        }
+        else{
+            System.out.println("1 - Disable step by step solution ");
+            optionInput = input.nextLine();
+            if(optionInput.equals("1")){
+                option1 = false;
+                System.out.println("Disabled");
+            }
+        }
+        return option1;
+    }
 }
+
+

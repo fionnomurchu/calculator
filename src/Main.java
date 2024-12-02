@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static String bro(ArrayList<String> a) {
+    public static String bro(ArrayList<String> a, boolean option1) {
         ArrayList<String> finalList = a;
         String result="";
 
@@ -18,11 +18,12 @@ public class Main {
                 finalList.set(counter - 1, result);
                 counter -= counter;
 
-
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1 || finalList.size() != 1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
         }
 
@@ -38,10 +39,12 @@ public class Main {
                 counter -= counter;
 
 
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
         }
 
@@ -60,10 +63,12 @@ public class Main {
                 counter -= counter;
 
 
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
         }
 
@@ -80,10 +85,12 @@ public class Main {
                 counter = 0;
 
 
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
         }
 
@@ -100,10 +107,12 @@ public class Main {
                 counter1 = 0;
 
 
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
 
 
@@ -117,10 +126,12 @@ public class Main {
                 finalList.set(counter1 - 1, result);
                 counter1 = 0;
 
-                for (String s : finalList) {
-                    System.out.print(s + " ");
+                if(option1){
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
             }
         }
         return result;
