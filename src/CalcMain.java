@@ -8,6 +8,7 @@ public class CalcMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean option1 = false;
+        String ans = "";
 
         System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
         String option = input.nextLine();
@@ -19,7 +20,7 @@ public class CalcMain {
                 option = input.nextLine();
             }
             else if(option.equals("2")){
-                ArrayList<String> finalList = Menu.account();
+                ArrayList<String> finalList = Menu.account(ans);
 
                 String iteration1="";
 
@@ -90,7 +91,9 @@ public class CalcMain {
                     System.out.println(finalList.get(0));
                 }
 
-                break;
+                ans = finalList.get(0);
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+                option = input.nextLine();
             }
             else if(option.equals("3")){
                 option1 = Menu.options();
@@ -98,7 +101,7 @@ public class CalcMain {
                 option = input.nextLine();
             }
             else{
-                System.out.println("Welcome\nFeature list: 1\nCalculator: 2");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
                 option = input.nextLine();
             }
         }

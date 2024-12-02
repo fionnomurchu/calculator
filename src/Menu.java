@@ -3,10 +3,13 @@ import java.util.Scanner;
 
 public class Menu {
     public static boolean option1 = false;
-    static ArrayList<String> account() {
+
+    static ArrayList<String> account(String ans) {
+
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your sum: ");
         String a = input.nextLine();
+
         String[] stringArray = a.split("");
 
         ArrayList<String> finalList = new ArrayList<>();
@@ -38,9 +41,14 @@ public class Menu {
                 value = "";
                 checker = "1";
 
-            } else {
+            } else if (s.equals("a") & value.isEmpty()){
+                value = ans;
+            }
+
+            else {
+                System.out.println(s);
                 System.out.print("Invalid input\n");
-                finalList = Menu.account();
+                finalList = Menu.account(ans);
 
                 break;
             }
@@ -52,7 +60,7 @@ public class Menu {
 
     static void featureList(){
         System.out.println("Features:\nAddition: +\nSubtraction: -\nMultiplication: *" +
-                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( )");
+                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nPrevious Result: a");
     }
 
     static boolean options(){
