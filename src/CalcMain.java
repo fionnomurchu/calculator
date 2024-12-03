@@ -71,15 +71,21 @@ public class CalcMain {
                                 subList = new ArrayList<>(finalList.subList(maxcounter + 1, counter));
                                 subList1 = new ArrayList<>(finalList.subList(maxcounter, counter + 1));
                                 finalList.subList(maxcounter, counter + 1).clear();
-                                System.out.println(finalList);
                                 counter++;
 
-                                System.out.println(subList);
+                                if(option1){
+                                    System.out.println(subList);
+                                }
+
                                 iteration1 = Main.bro(subList, option1);
-                                System.out.println(Main.bro(subList, option1));
+                                if(option1){
+                                    System.out.println(Main.bro(subList, option1));
+                                }
                                 finalList.add(maxcounter, iteration1);
                                 finalList.removeIf(s -> s == null || s.isEmpty());
-                                System.out.println(finalList);
+                                if(option1){
+                                    System.out.println(finalList);
+                                }
                             }
                         }
                     }
@@ -88,10 +94,10 @@ public class CalcMain {
                 }
                 Main.bro(finalList, option1);
                 if(!option1){
-                    System.out.println(finalList.get(0));
+                    System.out.println(finalList.getFirst());
                 }
 
-                ans = finalList.get(0);
+                ans = finalList.getFirst();
                 System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
                 option = input.nextLine();
             }
