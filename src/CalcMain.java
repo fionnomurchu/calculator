@@ -10,13 +10,13 @@ public class CalcMain {
         boolean option1 = false;
         String ans = "";
 
-        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
         String option = input.nextLine();
 
         while(true){
             if(option.equals("1")){
                 Menu.featureList();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
             else if(option.equals("2")){
@@ -98,16 +98,27 @@ public class CalcMain {
                 }
 
                 ans = finalList.getFirst();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
-            else if(option.equals("3")){
+
+
+            else if (option.equals("3")) {
+                BinaryCalculator.runBinaryCalculator();
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+                option = input.nextLine();
+            }
+
+            else if(option.equals("4")){
                 option1 = Menu.options();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
+
+
             else{
-                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+
                 option = input.nextLine();
             }
         }
