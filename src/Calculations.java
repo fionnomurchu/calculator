@@ -49,6 +49,21 @@ public class Calculations {
         return String.valueOf(number1);
     }
 
+    static String sin(String a) {
+        double number = Double.parseDouble(a);
+        return String.valueOf(Math.sin(Math.toRadians(number)));
+    }
+
+    static String cos(String a) {
+        double number = Double.parseDouble(a);
+        return String.valueOf(Math.cos(Math.toRadians(number)));
+    }
+
+    static String tan(String a) {
+        double number = Double.parseDouble(a);
+        return String.valueOf(Math.tan(Math.toRadians(number)));
+    }
+
     static String factorial(String a) {
         double number1 = Double.parseDouble(a);
         double result = 1;

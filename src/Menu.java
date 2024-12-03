@@ -54,6 +54,15 @@ public class Menu {
                 value = String.valueOf(Math.E);
             }
 
+            else if (s.equals("s") || s.equals("c") || s.equals("t")) { // For sin, cos, tan
+                if (!value.isEmpty()) {
+                    finalList.add(value);
+                    value = "";
+                }
+                finalList.add(s);
+
+            }
+
             else {
                 System.out.println(s);
                 System.out.print("Invalid input\n");
@@ -70,7 +79,8 @@ public class Menu {
     //Method containing option 1, A feature list
     static void featureList(){
         System.out.println("Features:\nAddition: +\nSubtraction: -\nMultiplication: *" +
-                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nEuler's Number: e\nPrevious Result: a");
+                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nEuler's Number: e\nPrevious Result: a" +
+                "\nSine: s\nCosine: c\nTangent: t");
     }
 
     //Method containing option 3, An option menu

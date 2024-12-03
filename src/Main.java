@@ -47,6 +47,54 @@ public class Main {
                 }
             }
         }
+        // sin
+        for (int counter = 0; counter < finalList.size(); counter++) {
+            if (finalList.get(counter).equals("s")) {
+                result = Calculations.sin(finalList.get(counter + 1));
+                finalList.remove(counter + 1);
+                finalList.set(counter, result);
+                counter = 0;
+                if (option1) {
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+
+        // cos
+        for (int counter = 0; counter < finalList.size(); counter++) {
+            if (finalList.get(counter).equals("c")) {
+                result = Calculations.cos(finalList.get(counter + 1));
+                finalList.remove(counter + 1);
+                finalList.set(counter, result);
+                counter = 0;
+                if (option1) {
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+
+        // tan
+        for (int counter = 0; counter < finalList.size(); counter++) {
+            if (finalList.get(counter).equals("t")) {
+                result = Calculations.tan(finalList.get(counter + 1));
+                finalList.remove(counter + 1);
+                finalList.set(counter, result);
+                counter = 0;
+                if (option1) {
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+
 
 
 
