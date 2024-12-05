@@ -64,6 +64,11 @@ public class Calculations {
         return String.valueOf(Math.tan(Math.toRadians(number)));
     }
 
+    static String log(String a) {
+        double number = Double.parseDouble(a);
+        return String.valueOf((Math.log(number)));
+    }
+
     static String factorial(String a) {
         double number1 = Double.parseDouble(a);
         double result = 1;

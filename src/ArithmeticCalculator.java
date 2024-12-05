@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main {
+public class ArithmeticCalculator {
 
     public static String bro(ArrayList<String> a, boolean option1) {
         ArrayList<String> finalList = a;
@@ -47,6 +47,23 @@ public class Main {
                 }
             }
         }
+
+        // log
+        for (int counter = 0; counter < finalList.size(); counter++) {
+            if (finalList.get(counter).equals("l")) {
+                result = Calculations.log(finalList.get(counter + 1));
+                finalList.remove(counter + 1);
+                finalList.set(counter, result);
+                counter = 0;
+                if (option1) {
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+
         // sin
         for (int counter = 0; counter < finalList.size(); counter++) {
             if (finalList.get(counter).equals("s")) {

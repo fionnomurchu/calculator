@@ -46,15 +46,24 @@ public class Menu {
                 value = "";
                 checker = "1";
 
-            } else if (s.equals("a") & value.isEmpty()){
+            }
+
+            //Previous result
+            else if (s.equals("a") & value.isEmpty()){
                 value = ans;
             }
 
+            //Euler's constant
             else if (s.equals("e")){
                 value = String.valueOf(Math.E);
             }
 
-            else if (s.equals("s") || s.equals("c") || s.equals("t")) { // For sin, cos, tan
+            //Pi
+            else if (s.equals("p")){
+                value= String.valueOf(Math.PI);
+            }
+
+            else if (s.equals("s") || s.equals("c") || s.equals("t") || s.equals("l")) { // For sin, cos, tan, log
                 if (!value.isEmpty()) {
                     finalList.add(value);
                     value = "";
@@ -78,9 +87,10 @@ public class Menu {
 
     //Method containing option 1, A feature list
     static void featureList(){
-        System.out.println("Features:\nAddition: +\nSubtraction: -\nMultiplication: *" +
-                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nEuler's Number: e\nPrevious Result: a" +
-                "\nSine: s\nCosine: c\nTangent: t");
+        System.out.println("Arithmetic Calculator:\nAddition: +\nSubtraction: -\nMultiplication: *" +
+                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nPrevious Result: a" +
+                " \n\nConstants: \nEuler's Number: e \nPi: p \nLoge: l\nSine: s\nCosine: c\nTangent: t\n\n" +
+                "Programing Calculator:\nBinary Conversion\nDecimal Conversion\nHexadecimal Conversion");
     }
 
     //Method containing option 3, An option menu

@@ -1,5 +1,3 @@
-import com.sun.jdi.ArrayReference;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -10,13 +8,13 @@ public class CalcMain {
         boolean option1 = false;
         String ans = "";
 
-        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
         String option = input.nextLine();
 
         while(true){
             if(option.equals("1")){
                 Menu.featureList();
-                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
             else if(option.equals("2")){
@@ -41,7 +39,7 @@ public class CalcMain {
                     }
                     if (counter == finalList.size()-1){
                         if(option1) {
-                            System.out.println(Main.bro(finalList, option1));
+                            System.out.println(ArithmeticCalculator.bro(finalList, option1));
                         }
                     }
                 }
@@ -77,9 +75,9 @@ public class CalcMain {
                                     System.out.println(subList);
                                 }
 
-                                iteration1 = Main.bro(subList, option1);
+                                iteration1 = ArithmeticCalculator.bro(subList, option1);
                                 if(option1){
-                                    System.out.println(Main.bro(subList, option1));
+                                    System.out.println(ArithmeticCalculator.bro(subList, option1));
                                 }
                                 finalList.add(maxcounter, iteration1);
                                 finalList.removeIf(s -> s == null || s.isEmpty());
@@ -92,32 +90,32 @@ public class CalcMain {
 
 
                 }
-                Main.bro(finalList, option1);
+                ArithmeticCalculator.bro(finalList, option1);
                 if(!option1){
                     System.out.println(finalList.getFirst());
                 }
 
                 ans = finalList.getFirst();
-                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
 
 
             else if (option.equals("3")) {
                 BinaryCalculator.runBinaryCalculator();
-                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
 
             else if(option.equals("4")){
                 option1 = Menu.options();
-                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
                 option = input.nextLine();
             }
 
 
             else{
-                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Options\n");
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
 
                 option = input.nextLine();
             }
