@@ -99,9 +99,12 @@ public class Menu {
         System.out.println("Binary Conversion\nDecimal Conversion\nHexadecimal Conversion");
 
         System.out.println("\nUnit Conversions:");
-        System.out.println("Meters to Feet: m\nFeet to Meters: f");
-        System.out.println("Kilograms to Pounds: kg\nPounds to Kilograms: lb");
-        System.out.println("Celsius to Fahrenheit: c\nFahrenheit to Celsius: f");
+        System.out.println("Length Conversions: Kilometers ↔ Miles, Meters ↔ Feet");
+        System.out.println("Volume Conversions: Liters ↔ Gallons");
+        System.out.println("Power Conversions: Horsepower ↔ Kilowatts, Watts ↔ Kilowatts, Kilowatts ↔ Megawatts");
+        System.out.println("Temperature Conversions: Celsius ↔ Fahrenheit");
+        System.out.println("Weight Conversions: Kilograms ↔ Pounds");
+        System.out.println("Land Area Conversions: Acres ↔ Hectares");
     }
 
 
