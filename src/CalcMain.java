@@ -8,13 +8,13 @@ public class CalcMain {
         boolean option1 = false;
         String ans = "";
 
-        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
+        System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programming Calculator\n4 - Unit Converter\n5 - Options ");
         String option = input.nextLine();
 
         while(true){
             if(option.equals("1")){
                 Menu.featureList();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
+                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Unit Converter\n5 - Options ");
                 option = input.nextLine();
             }
             else if(option.equals("2")){
@@ -96,27 +96,36 @@ public class CalcMain {
                 }
 
                 ans = finalList.getFirst();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Options ");
                 option = input.nextLine();
             }
 
 
             else if (option.equals("3")) {
                 BinaryCalculator.runBinaryCalculator();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Options ");
                 option = input.nextLine();
             }
 
-            else if(option.equals("4")){
+
+
+
+            else if (option.equals("4")) {
+                UnitConverter.runUnitConverter();
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Options ");
+                option = input.nextLine();
+            }
+
+
+            else if(option.equals("5")){
                 option1 = Menu.options();
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Options ");
                 option = input.nextLine();
             }
 
 
             else{
-                System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Programing Calculator\n4 - Options\n");
-
+                System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Options ");
                 option = input.nextLine();
             }
         }

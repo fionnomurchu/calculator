@@ -86,12 +86,24 @@ public class Menu {
     }
 
     //Method containing option 1, A feature list
-    static void featureList(){
-        System.out.println("Arithmetic Calculator:\nAddition: +\nSubtraction: -\nMultiplication: *" +
-                "\nDivision: /\nPower: ^\nFactorial: !\nBrackets: ( ) \nPrevious Result: a" +
-                " \n\nConstants: \nEuler's Number: e \nPi: p \nLoge: l\nSine: s\nCosine: c\nTangent: t\n\n" +
-                "Programing Calculator:\nBinary Conversion\nDecimal Conversion\nHexadecimal Conversion");
+    static void featureList() {
+        System.out.println("Arithmetic Calculator:");
+        System.out.println("Addition: +\nSubtraction: -\nMultiplication: *\nDivision: /\nPower: ^\nFactorial: !");
+        System.out.println("Brackets: ( )\nPrevious Result: a");
+
+        System.out.println("\nConstants:");
+        System.out.println("Euler's Number: e\nPi: p\nLoge: l");
+        System.out.println("Sine: s\nCosine: c\nTangent: t");
+
+        System.out.println("\nProgramming Calculator:");
+        System.out.println("Binary Conversion\nDecimal Conversion\nHexadecimal Conversion");
+
+        System.out.println("\nUnit Conversions:");
+        System.out.println("Meters to Feet: m\nFeet to Meters: f");
+        System.out.println("Kilograms to Pounds: kg\nPounds to Kilograms: lb");
+        System.out.println("Celsius to Fahrenheit: c\nFahrenheit to Celsius: f");
     }
+
 
     //Method containing option 3, An option menu
     static boolean options(){
