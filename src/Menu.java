@@ -87,7 +87,7 @@ public class Menu {
 
     //Method containing option 1, A feature list
     static void featureList() {
-        System.out.println("Arithmetic Calculator:");
+        System.out.println("\nArithmetic Calculator:");
         System.out.println("Addition: +\nSubtraction: -\nMultiplication: *\nDivision: /\nPower: ^\nFactorial: !\nModulus: % (e.g., 10 % 3 calculates the remainder of 10 divided by 3)");
         System.out.println("Brackets: ( )\nPrevious Result: a");
 
