@@ -102,7 +102,7 @@ public class CalcMain {
 
 
             else if (option.equals("3")) {
-                BinaryCalculator.runBinaryCalculator();
+                ProgrammingCalculator.runProgrammingCalculator();
                 System.out.println("Welcome\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Options ");
                 option = input.nextLine();
             }

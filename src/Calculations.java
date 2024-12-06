@@ -85,5 +85,14 @@ public class Calculations {
         return String.valueOf(result);
     }
 
+    static String modulus(String a, String b) {
+        double number1 = Double.parseDouble(a);
+        double number2 = Double.parseDouble(b);
+
+        double result = number1 % number2;
+        return String.valueOf(result);
+    }
+
+
 }
 

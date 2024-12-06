@@ -64,6 +64,9 @@ public class ArithmeticCalculator {
             }
         }
 
+
+
+
         // sin
         for (int counter = 0; counter < finalList.size(); counter++) {
             if (finalList.get(counter).equals("s")) {
@@ -111,6 +114,26 @@ public class ArithmeticCalculator {
                 }
             }
         }
+
+        // Modulus operation
+        for (
+                int counter = 0; counter < finalList.size(); counter++) {
+            if (finalList.get(counter).equals("%")) {
+                result = Calculations.modulus(finalList.get(counter - 1), finalList.get(counter + 1));
+                finalList.remove(counter + 0);
+                finalList.remove(counter + 0);
+                finalList.set(counter - 1, result);
+                counter = 0;
+
+                if (option1) {
+                    for (String s : finalList) {
+                        System.out.print(s + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+
 
 
 

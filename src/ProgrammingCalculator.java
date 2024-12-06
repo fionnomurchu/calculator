@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class BinaryCalculator {
+public class ProgrammingCalculator {
 
-    public static void runBinaryCalculator() {
+    public static void runProgrammingCalculator() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Number System Converter:\n1 - Input Binary\n2 - Input Decimal\n3 - Input Hexadecimal");
         String choice = scanner.nextLine();
