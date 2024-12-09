@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Calculations {
@@ -11,9 +13,11 @@ public class Calculations {
 
     static String subtract(String a, String b) {
         validateInputs(a, b, "subtraction");
+
         double number1 = Double.parseDouble(a);
         double number2 = Double.parseDouble(b);
         return String.valueOf(number1 - number2);
+
     }
 
     static String multiply(String a, String b) {
@@ -25,12 +29,22 @@ public class Calculations {
 
     static String divide(String a, String b) {
         validateInputs(a, b, "division");
-        double number1 = Double.parseDouble(a);
-        double number2 = Double.parseDouble(b);
-        if (number2 == 0) {
-            throw new ArithmeticException("Error: Division by zero is not allowed.");
+        Scanner input = new Scanner(System.in);
+        try {
+            double number1 = Double.parseDouble(a);
+            double number2 = Double.parseDouble(b);
+            while (number2 == 0) {
+                System.out.println("Error: Division by zero is not allowed.");
+                System.out.print("Please enter a new non-zero value for the divisor: ");
+                number2 = input.nextDouble();
+
+            }
+            return String.valueOf(number1 / number2);
+        } catch (NumberFormatException e) {
+            return "Error: Enter valid numbers, please!";
+        } catch (IllegalStateException | NoSuchElementException e) {
+            return "Error: Input stream issue. Please restart.";
         }
-        return String.valueOf(number1 / number2);
     }
 
     static String power(String a, String b) {
@@ -60,34 +74,77 @@ public class Calculations {
 
     static String log(String a) {
         validateInputs(a, null, "logarithm");
-        double number = Double.parseDouble(a);
-        if (number <= 0) {
-            throw new ArithmeticException("Error: Logarithm undefined for non-positive numbers.");
+        Scanner input = new Scanner(System.in);
+        try {
+            double number = Double.parseDouble(a);
+
+            while (number <= 0) {
+                System.out.println("Error: logarithm of a negative number is undefined! ");
+                System.out.print("Please enter a new non-zero value! ");
+                number = input.nextDouble();
+            }
+            return String.valueOf(Math.log(number));
+        }catch (IllegalStateException | NoSuchElementException e) {
+            return "Error: Input stream issue. Please restart.";
         }
-        return String.valueOf(Math.log(number));
     }
 
     static String factorial(String a) {
         validateInputs(a, null, "factorial");
-        double number1 = Double.parseDouble(a);
-        if (number1 < 0) {
-            throw new IllegalArgumentException("Error: Factorial is only defined for non-negative integers.");
+        Scanner input = new Scanner(System.in);
+        try {
+            double number1 = Double.parseDouble(a);
+            while (number1 >= 171) {
+                System.out.println("Error:Number is too large");
+                System.out.print("Please enter a smaller number! ");
+                number1 = input.nextDouble();
+            }
+            while (number1 < 0) {
+                System.out.println("Error: Factorial is only defined for non-negative integers!");
+                System.out.print("Please enter a number > 0 ");
+                number1 = input.nextDouble();
+
+            }
+            while (number1 != (int) number1) {
+                System.out.println("Error: Factorial is only defined for whole numbers.");
+                System.out.print("Please enter an integer!");
+                number1 = input.nextDouble();
+            }
+
+            double result = 1;
+            while (number1 != 0) {
+                result *= number1;
+                number1 -= 1;
+
+            }
+            return String.valueOf(result);
+
+        } catch (IllegalStateException | NoSuchElementException e) {
+            return "Error: Input stream issue. Please restart.";
         }
-        double result = 1;
-        while (number1 != 0) {
-            result *= number1;
-            number1 -= 1;
-        }
-        return String.valueOf(result);
     }
 
     static String modulus(String a, String b) {
         validateInputs(a, b, "modulus");
-        double number1 = Double.parseDouble(a);
-        double number2 = Double.parseDouble(b);
-        return String.valueOf(number1 % number2);
-    }
+        Scanner input = new Scanner(System.in);
+        try {
+            double number1 = Double.parseDouble(a);
+            double number2 = Double.parseDouble(b);
+            while (number2 == 0) {
+                System.out.println("Error: modulus by zero is not allowed.");
+                System.out.print("Please enter a new non-zero value for the modulus: ");
+                number2 = input.nextDouble();
 
+            }if (Double.isInfinite(number1) || Double.isInfinite(number2)) {
+                throw new ArithmeticException("Error: One of the mumbers is infinite/too large, please try a smaller number!");
+            }
+            return String.valueOf(number1 % number2);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Error: Please enter valid numbers, please!");
+        } catch (IllegalStateException | NoSuchElementException e) {
+            return "Error: Input stream issue. Please restart.";
+        }
+    }
     public static void validateInputs(String a, String b, String operation) {
         if (a == null || a.isEmpty()) {
             throw new IllegalArgumentException("Error: Invalid input for " + operation);
