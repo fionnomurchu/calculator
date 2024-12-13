@@ -1,6 +1,10 @@
+package Calcuators;
+
+import Menu.Calculators;
+
 import java.util.ArrayList;
 
-public class ArithmeticCalculator {
+public class ArithmeticCalculator extends Calculators{
 
     public static String bro(ArrayList<String> a, boolean option1) {
         ArrayList<String> finalList = a;

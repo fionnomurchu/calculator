@@ -1,3 +1,8 @@
+/*import Calcuators.AlgebraCalculator;
+import Calcuators.ArithmeticCalculator;
+import Calcuators.ProgrammingCalculator;
+import Calcuators.UnitConverterCalculator;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -111,7 +116,7 @@ public class CalcMain {
 
 
             else if (option.equals("4")) {
-                UnitConverter.runUnitConverter();
+                UnitConverterCalculator.runUnitConverter();
                 System.out.println("\n1 - Feature list\n2 - Arithmetic Calculator\n3 - Binary Calculator\n4 - Unit Converter\n5 - Algebra Calculator\n6 - Options ");
                 option = input.nextLine();
             }
@@ -136,4 +141,4 @@ public class CalcMain {
             }
         }
     }
-}
+}*/

@@ -1,3 +1,5 @@
+package Calcuators;
+
 import java.util.Scanner;
 
 public class ProgrammingCalculator {

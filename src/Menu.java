@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class Menu {
     public static boolean option1 = false;
 
-    //Account method that takes the string "ans" as an argument
+    //Calculator method that takes the string "ans" as an argument
     //This method contains option 2 which allows you to enter a sum
     //Method processes the sum as a string and divides it in to a string array
     static ArrayList<String> account(String ans) {
 
         //Takes in the sum input as a string
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter your sum: ");
+        System.out.print("Enter your equation: ");
         String a = input.nextLine();
 
         //Divides the String in to a string array

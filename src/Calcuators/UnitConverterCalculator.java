@@ -1,6 +1,8 @@
+package Calcuators;
+
 import java.util.Scanner;
 
-public class UnitConverter {
+public class UnitConverterCalculator {
 
     public static void runUnitConverter() {
         Scanner scanner = new Scanner(System.in);
