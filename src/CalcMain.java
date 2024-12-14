@@ -110,6 +110,8 @@ public class CalcMain {
             }
 
             else if(option.equals("4")){
+
+
                 System.out.println("enter size of a square matrix:");
                 int a = input.nextInt();
                 new Matrix(a);
