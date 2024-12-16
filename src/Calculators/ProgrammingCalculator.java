@@ -1,8 +1,13 @@
+package Calculators;
+
+import Menu.Calculators;
+
 import java.util.Scanner;
 
-public class ProgrammingCalculator {
+public class ProgrammingCalculator extends Calculators {
 
-    public static void runProgrammingCalculator() {
+    @Override
+    public void runCalculator() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Number System Converter:\n1 - Input Binary\n2 - Input Decimal\n3 - Input Hexadecimal");
         String choice = scanner.nextLine();

@@ -1,5 +1,9 @@
+package Calculators;
+
 import java.util.Scanner;
-public class Matrix {
+
+public class MatrixCalculator {
+
     int MatrixSize;
     Scanner scanner = new Scanner(System.in);
     int matrix[][];
@@ -10,7 +14,7 @@ public class Matrix {
 
 
 
-    public Matrix(int MatrixSize) {
+    public void Matrix(int MatrixSize) {
         this.MatrixSize = MatrixSize;
 
 
