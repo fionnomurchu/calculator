@@ -1,7 +1,7 @@
-import Calcuators.ArithmeticCalculator;
-import Calcuators.ArithmeticCalculatorInput;
-import Calcuators.ProgrammingCalculator;
-import Calcuators.UnitConverterCalculator;
+import Calculators.ArithmeticCalculator;
+import Calculators.ArithmeticCalculatorInput;
+import Calculators.ProgrammingCalculator;
+import Calculators.UnitConverterCalculator;
 import Menu.Calculators;
 import Menu.MenuItems;
 
@@ -25,7 +25,7 @@ public class CalcCaller {
         switch (calcChosen) {
             case "1":
                 ArrayList<String> finalList = ArithmeticCalculatorInput.input(ans);
-                boolean option1 = false;
+                boolean option1 = true;
                 String result = arithmeticCalculator.arithmeticCalculations(finalList, option1);
                 System.out.println(result);
                 break;

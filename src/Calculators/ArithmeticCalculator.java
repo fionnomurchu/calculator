@@ -1,4 +1,4 @@
-package Calcuators;
+package Calculators;
 
 import Menu.Calculators;
 

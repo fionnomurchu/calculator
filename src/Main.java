@@ -5,6 +5,7 @@ import Menu.Settings;
 import Menu.Calculators;
 
 public class Main {
+
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
@@ -29,7 +30,7 @@ public class Main {
                     calcCaller.calcCaller();
                     break;
                 case "3":
-                    boolean option1 = true;
+                    boolean option1 = false;
                     option1 = settings.options(option1);
                     break;
                 case "4":

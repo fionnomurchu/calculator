@@ -1,10 +1,5 @@
 package Menu;
 
-import Calcuators.ArithmeticCalculator;
-import Calcuators.ArithmeticCalculatorInput;
-import Calcuators.ProgrammingCalculator;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculators extends MenuItems {
