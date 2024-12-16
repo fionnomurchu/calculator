@@ -1,10 +1,13 @@
 package Calcuators;
 
+import Menu.Calculators;
+
 import java.util.Scanner;
 
-public class UnitConverterCalculator {
+public class UnitConverterCalculator extends Calculators {
 
-    public static void runUnitConverter() {
+    @Override
+    public void runCalculator() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Unit Converter:");
         System.out.println("Available conversions:");

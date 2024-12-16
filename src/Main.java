@@ -8,12 +8,12 @@ public class Main {
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
-        boolean option1 = false;
 
         MenuItems menu = new MenuItems();
         MenuItems featureList = new FeatureList();
         MenuItems calculators = new Calculators();
         Settings settings = new Settings();
+        CalcCaller calcCaller = new CalcCaller();
 
         label:
         while (true){
@@ -26,8 +26,10 @@ public class Main {
                     break;
                 case "2":
                     calculators.display();
+                    calcCaller.calcCaller();
                     break;
                 case "3":
+                    boolean option1 = true;
                     option1 = settings.options(option1);
                     break;
                 case "4":
@@ -35,7 +37,6 @@ public class Main {
                 default:
                     System.err.println("Invalid input");
                     menu.display();
-                    option = input.nextLine();
                     break;
             }
         }

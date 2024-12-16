@@ -15,7 +15,7 @@ public class AlgebraCalculator {
 
         while (true){
             if(option.equals("1")){
-                ArrayList<String> quadratic = Menu.account(ans);
+                ArrayList<String> quadratic = useless.Menu.account(ans);
                 System.out.println(quadratic);
                 break;
             }
