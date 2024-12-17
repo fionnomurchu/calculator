@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
+        boolean option1 = true;
 
         MenuItems menu = new MenuItems();
         MenuItems featureList = new FeatureList();
@@ -30,8 +31,7 @@ public class Main {
                     calcCaller.calcCaller();
                     break;
                 case "3":
-                    boolean option1 = false;
-                    option1 = settings.options(option1);
+                    settings.display();
                     break;
                 case "4":
                     break label;

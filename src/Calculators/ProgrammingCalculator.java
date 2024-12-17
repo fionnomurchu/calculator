@@ -20,8 +20,10 @@ public class ProgrammingCalculator extends Calculators {
                 int decimal = Integer.parseInt(binary, 2);
                 System.out.println("Decimal: " + decimal);
                 System.out.println("Hexadecimal: " + Integer.toHexString(decimal).toUpperCase());
+                System.out.println("--------------------");
             } catch (NumberFormatException e) {
                 System.out.println("Invalid binary number");
+                System.out.println("--------------------");
             }
         }
 
@@ -33,8 +35,10 @@ public class ProgrammingCalculator extends Calculators {
                 int decimal = Integer.parseInt(decimalInput);
                 System.out.println("Binary: " + Integer.toBinaryString(decimal));
                 System.out.println("Hexadecimal: " + Integer.toHexString(decimal).toUpperCase());
+                System.out.println("--------------------");
             } catch (NumberFormatException e) {
                 System.out.println("Invalid decimal number");
+                System.out.println("--------------------");
             }
         }
 
@@ -47,14 +51,17 @@ public class ProgrammingCalculator extends Calculators {
                 int decimal = Integer.parseInt(hex, 16);
                 System.out.println("Binary: " + Integer.toBinaryString(decimal));
                 System.out.println("Decimal: " + decimal);
+                System.out.println("--------------------");
             }
             catch (NumberFormatException e) {
                 System.out.println("Invalid hexadecimal number");
+                System.out.println("--------------------");
             }
         }
 
         else {
             System.out.println("Invalid choice.");
+            System.out.println("--------------------");
         }
     }
 }
