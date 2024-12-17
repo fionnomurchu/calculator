@@ -146,17 +146,5 @@ public class MatrixCalculator extends Calculators {
     }
 
 
-    public void subtract(){
-        int[][] newMatrix = new int[matrixSize][matrixSize];
 
-        for (int row = 0; row < matrixSize; row++) {
-            for (int colum = 0; colum < matrixSize; colum++) {
-
-
-                int b = matrix[row][colum]-matrix2[row][colum];
-                newMatrix[row][colum]= b;
-                System.out.println(b);
-            }
-        }
-    }
 }
