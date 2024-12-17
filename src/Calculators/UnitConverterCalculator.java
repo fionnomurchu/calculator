@@ -33,18 +33,22 @@ public class UnitConverterCalculator extends Calculators {
 
                     if (lengthOption.equals("1")) {
                         System.out.println(lengthValue + " kilometers = " + (lengthValue * 0.621371) + " miles");
+                        System.out.println("--------------------");
 
                     } else if (lengthOption.equals("2")) {
                         System.out.println(lengthValue + " miles = " + (lengthValue * 1.60934) + " kilometers");
+                        System.out.println("--------------------");
 
                     } else if (lengthOption.equals("3")) {
                         System.out.println(lengthValue + " meters = " + (lengthValue * 3.28084) + " feet");
+                        System.out.println("--------------------");
 
                     } else if (lengthOption.equals("4")) {
                         System.out.println(lengthValue + " feet = " + (lengthValue / 3.28084) + " meters");
-
+                        System.out.println("--------------------");
                     } else {
-                        System.out.println("Invalid selection.");
+                        System.err.println("Invalid selection.");
+                        System.out.println("--------------------");
                     }
                     break;
 
@@ -58,12 +62,15 @@ public class UnitConverterCalculator extends Calculators {
 
                     if (volumeOption.equals("1")) {
                         System.out.println(volumeValue + " litres = " + (volumeValue * 0.264172) + " gallons");
+                        System.out.println("--------------------");
 
                     } else if (volumeOption.equals("2")) {
                         System.out.println(volumeValue + " gallons = " + (volumeValue / 0.264172) + " litres");
+                        System.out.println("--------------------");
 
                     } else {
-                        System.out.println("Invalid selection");
+                        System.err.println("Invalid selection");
+                        System.out.println("--------------------");
                     }
                     break;
 
@@ -79,18 +86,23 @@ public class UnitConverterCalculator extends Calculators {
 
                     if (powerOption.equals("1")) {
                         System.out.println(powerValue + " horsepower = " + (powerValue * 0.7457) + " kilowatts");
+                        System.out.println("--------------------");
 
                     } else if (powerOption.equals("2")) {
                         System.out.println(powerValue + " kilowatts = " + (powerValue / 0.7457) + " horsepower");
+                        System.out.println("--------------------");
 
                     } else if (powerOption.equals("3")) {
                         System.out.println(powerValue + " watts = " + (powerValue * 0.001) + " kilowatts");
+                        System.out.println("--------------------");
 
                     } else if (powerOption.equals("4")) {
                         System.out.println(powerValue + " kilowatts = " + (powerValue * 0.001) + " megawatts");
+                        System.out.println("--------------------");
 
                     } else {
-                        System.out.println("Invalid selection");
+                        System.err.println("Invalid selection");
+                        System.out.println("--------------------");
                     }
                     break;
 
@@ -104,12 +116,15 @@ public class UnitConverterCalculator extends Calculators {
 
                     if (tempOption.equals("1")) {
                         System.out.println(tempValue + " Celsius = " + ((tempValue * 9 / 5) + 32) + " Fahrenheit");
+                        System.out.println("--------------------");
 
                     } else if (tempOption.equals("2")) {
                         System.out.println(tempValue + " Fahrenheit = " + ((tempValue - 32) * 5 / 9) + " Celsius");
+                        System.out.println("--------------------");
 
                     } else {
-                        System.out.println("Invalid selection");
+                        System.err.println("Invalid selection");
+                        System.out.println("--------------------");
                     }
                     break;
 
@@ -123,12 +138,15 @@ public class UnitConverterCalculator extends Calculators {
 
                     if (weightOption.equals("1")) {
                         System.out.println(weightValue + " kilograms = " + (weightValue * 2.20462) + " pounds");
+                        System.out.println("--------------------");
 
                     } else if (weightOption.equals("2")) {
                         System.out.println(weightValue + " pounds = " + (weightValue / 2.20462) + " kilograms");
+                        System.out.println("--------------------");
 
                     } else {
-                        System.out.println("Invalid selection");
+                        System.err.println("Invalid selection");
+                        System.out.println("--------------------");
                     }
                     break;
 
@@ -142,17 +160,21 @@ public class UnitConverterCalculator extends Calculators {
 
                     if (landOption.equals("1")) {
                         System.out.println(landValue + " acres = " + (landValue * 0.404686) + " hectares");
+                        System.out.println("--------------------");
 
                     } else if (landOption.equals("2")) {
                         System.out.println(landValue + " hectares = " + (landValue / 0.404686) + " acres");
+                        System.out.println("--------------------");
 
                     } else {
-                        System.out.println("Invalid selection");
+                        System.err.println("Invalid selection");
+                        System.out.println("--------------------");
                     }
                     break;
 
                 default:
-                    System.out.println("Invalid unit selection");
+                    System.err.println("Invalid unit selection");
+                    System.out.println("--------------------");
                     break;
             }
         } catch (NumberFormatException e) {

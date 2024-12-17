@@ -4,7 +4,8 @@ public class FeatureList extends MenuItems {
     //Method containing option 1, A feature list
     @Override
     public void display() {
-        System.out.println("\nArithmetic Calculator:");
+        System.out.println("--------------------");
+        System.out.println("Arithmetic Calculator:");
         System.out.println("Addition: +\nSubtraction: -\nMultiplication: *\nDivision: /\nPower: ^\nFactorial: !\nModulus: % (e.g., 10 % 3 calculates the remainder of 10 divided by 3)");
         System.out.println("Brackets: ( )\nPrevious Result: a");
 
@@ -22,6 +23,5 @@ public class FeatureList extends MenuItems {
         System.out.println("Temperature Conversions: Celsius ↔ Fahrenheit");
         System.out.println("Weight Conversions: Kilograms ↔ Pounds");
         System.out.println("Land Area Conversions: Acres ↔ Hectares");
-        System.out.println("--------------------");
     }
 }
