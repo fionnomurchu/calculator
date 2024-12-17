@@ -4,6 +4,21 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
+
+class CalculationException extends RuntimeException {
+    public CalculationException(String message) {
+        super(message);
+    }
+}
+
+class InvalidInputException extends CalculationException {
+    public InvalidInputException(String message) {
+        super(message);
+    }
+}
+
+
+
 public class Calculations {
 
     static String add(String a, String b) {
@@ -91,6 +106,7 @@ public class Calculations {
         }
     }
 
+
     static String factorial(String a) {
         validateInputs(a, null, "factorial");
         Scanner input = new Scanner(System.in);
@@ -126,6 +142,8 @@ public class Calculations {
         }
     }
 
+
+
     static String modulus(String a, String b) {
         validateInputs(a, b, "modulus");
         Scanner input = new Scanner(System.in);
@@ -147,26 +165,29 @@ public class Calculations {
             return "Error: Input stream issue. Please restart.";
         }
     }
+
+
+
+
     public static void validateInputs(String a, String b, String operation) {
         if (a == null || a.isEmpty()) {
-            throw new IllegalArgumentException("Error: Invalid input for " + operation);
+            throw new InvalidInputException("Error: Invalid input for " + operation);
         }
         try {
             Double.parseDouble(a);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Error: Input must be a valid number for " + operation);
+            throw new InvalidInputException("Error: Input must be a valid number for " + operation);
         }
 
         if (b != null) {
             if (b.isEmpty()) {
-                throw new IllegalArgumentException("Error: Invalid input for " + operation);
+                throw new InvalidInputException("Error: Invalid input for " + operation);
             }
             try {
                 Double.parseDouble(b);
             } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("Error: Input must be a valid number for " + operation);
+                throw new InvalidInputException("Error: Input must be a valid number for " + operation);
             }
-
         }
     }
 }
