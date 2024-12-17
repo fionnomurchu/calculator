@@ -18,7 +18,7 @@ public class MatrixCalculator extends Calculators{
     @Override
     public void runCalculator() {
         System.out.println("enter size of a square matrix:");
-        int matrixSize = scanner.nextInt();
+        matrixSize = scanner.nextInt();
 
         matrix = new int[matrixSize][matrixSize];
         matrix2 = new int[matrixSize][matrixSize];
@@ -30,6 +30,7 @@ public class MatrixCalculator extends Calculators{
             }
         }
 
+
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++){
                 System.out.print("\t"+matrix[row][colum]);
@@ -37,7 +38,7 @@ public class MatrixCalculator extends Calculators{
             System.out.println();
 
         }
-
+        System.out.println("matrix #2");
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
                 System.out.println("Enter number for " +row+","+ colum);
@@ -54,7 +55,7 @@ public class MatrixCalculator extends Calculators{
 
         }
 
-        System.out.println("1 - add two matrices\n2 - subtract two matrices\n3 - multiply two matrices");
+        System.out.println("would you like to \n1 - add these matrices\n2 - subtract these matrices\n3 - multiply these matrices");
         scanner.nextLine();
         String choice = scanner.nextLine();
         switch (choice) {
@@ -64,18 +65,15 @@ public class MatrixCalculator extends Calculators{
                 break;
             case "2":
                 System.out.println();
+                subtract();
                 break;
             case "3":
-                System.out.println();
-                break;
-            case "4":
                 System.out.println();
                 square();
                 break;
             default:
                 System.out.println("invalid choice");
                 break;
-
         }
 
     }
@@ -94,6 +92,7 @@ public class MatrixCalculator extends Calculators{
                 fionn=0;
             }
         }
+        System.out.println(newMatrix[0][0]);
 
         System.out.println("product of matrix is:");
         for (int row = 0; row < matrixSize; row++) {
@@ -116,6 +115,21 @@ public class MatrixCalculator extends Calculators{
 
 
                     int b = matrix[row][colum]+matrix2[row][colum];
+                newMatrix[row][colum]= b;
+                System.out.println(b);
+            }
+        }
+    }
+
+
+    public void subtract(){
+        int[][] newMatrix = new int[matrixSize][matrixSize];
+
+        for (int row = 0; row < matrixSize; row++) {
+            for (int colum = 0; colum < matrixSize; colum++) {
+
+
+                int b = matrix[row][colum]-matrix2[row][colum];
                 newMatrix[row][colum]= b;
                 System.out.println(b);
             }
