@@ -12,10 +12,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 //class responsible for handling Calculations 
 public class CalcCaller {
+
+    private String ans = "";
+    private final Settings settings; // Use the shared Settings instance
+
+    public CalcCaller(Settings settings) {
+        this.settings = settings; // Constructor takes the shared Settings instance
+    }
+
     public void calcCaller(){
         Scanner input = new Scanner(System.in);
-        String ans = "";
-//initialize menu and calculator objects
+
         MenuItems calculators = new Calculators();
 
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
@@ -23,16 +30,14 @@ public class CalcCaller {
         Calculators unitConverterCalculator = new UnitConverterCalculator();
         Calculators matrixCalculator = new MatrixCalculator();
         Calculators calculatorChoice = new Calculators();
-        Settings settings = new Settings();
-        //prompts for users calculator choice
+
         String calcChosen = calculatorChoice.calculatorChoice();
         //switch statement used to select choice
         switch (calcChosen) {
             case "1":
                 ArrayList<String> finalList = ArithmeticCalculatorInput.input(ans);
                 boolean option1 = settings.isStepByStepEnabled();
-                String result = arithmeticCalculator.arithmeticCalculations(finalList, option1);
-                System.out.println(result);
+                ans = arithmeticCalculator.arithmeticCalculations(finalList, option1);
                 break;
             case "2":
                 programmingCalculator.runCalculator();

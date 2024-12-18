@@ -23,6 +23,7 @@ public class ArithmeticCalculator extends Calculators{
                     brace++;
                 }
             }
+
             maxBrace = brace;
             int counter2 = 1;
             ArrayList<String> subList = null;
@@ -38,12 +39,13 @@ public class ArithmeticCalculator extends Calculators{
                         counter++;
 
                         if (option1) {
+                            System.out.println(option1);
                             System.out.println(subList);
                         }
 
                         iteration1 = arithmeticCalculations(subList, option1);
                         if (option1) {
-                            System.out.println(arithmeticCalculations(subList, option1));
+                            arithmeticCalculations(subList, option1);
                         }
                         a.add(maxCounter, iteration1);
                         a.removeIf(s -> s == null || s.isEmpty());
@@ -267,6 +269,9 @@ public class ArithmeticCalculator extends Calculators{
                 }
             }
         }
-        return result;//returns the result of after calculations
+        if(!option1){
+            System.out.println(result);
+        }
+        return result;
     }
 }

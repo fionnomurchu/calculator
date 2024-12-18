@@ -6,6 +6,7 @@ import Menu.Settings;
 import Menu.Calculators;
 //main class that acts as the entry point of the program
 public class Main {
+
 //main method that runs the program
     public static void main(String[] args){
 
@@ -16,7 +17,7 @@ public class Main {
         MenuItems featureList = new FeatureList();
         MenuItems calculators = new Calculators();
         Settings settings = new Settings();
-        CalcCaller calcCaller = new CalcCaller();
+        CalcCaller calcCaller = new CalcCaller(settings);
 
         label:
         while (true){
@@ -44,3 +45,6 @@ public class Main {
         }
     }
 }
+
+
+

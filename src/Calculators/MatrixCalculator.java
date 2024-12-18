@@ -7,11 +7,12 @@ import java.util.Scanner;
 public class MatrixCalculator extends Calculators {
 
     Scanner scanner = new Scanner(System.in);
-    int[][] matrix;//stores first matrix 
-    int[][] matrix2;//stores second matrix
-    int matrixSize;
-    int fionn = 0;
-    int[][] newMatrix;//matrix to store result 
+
+    private int[][] matrix;
+    private int[][] matrix2;
+    private int matrixSize;
+    private int sumResult = 0;
+    private int[][] newMatrix;
 
 //overrides runCalculator to perform matrix calculations
     @Override
@@ -82,8 +83,8 @@ public class MatrixCalculator extends Calculators {
                 System.out.println();
                 square();
                 break;
-            default://error handling for invalid choice 
-                System.out.println("invalid choice");
+            default:
+                System.err.println("Invalid choice");
                 break;
         }
 
@@ -95,12 +96,11 @@ public class MatrixCalculator extends Calculators {
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
                 for (int counter = 0; counter < matrixSize; counter++) {
-
-                    int b = matrix[counter][colum] * matrix2[row][counter];
-                    fionn += b;
+                    int b = matrix[counter][colum]*matrix2[row][counter];
+                    sumResult += b;
                 }
-                newMatrix[row][colum] = fionn;//stores result in new matrix 
-                fionn = 0;
+                newMatrix[row][colum]= sumResult;
+                sumResult=0;
             }
         }
         System.out.println(newMatrix[0][0]);
