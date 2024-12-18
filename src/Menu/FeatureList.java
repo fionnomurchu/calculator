@@ -24,5 +24,10 @@ public class FeatureList extends MenuItems {
         System.out.println("Temperature Conversions: Celsius ↔ Fahrenheit");
         System.out.println("Weight Conversions: Kilograms ↔ Pounds");
         System.out.println("Land Area Conversions: Acres ↔ Hectares");
+        //Matrix calculator features
+        System.out.println("\nMatrix Calculator:");
+        System.out.println("Addition");
+        System.out.println("Subtraction");
+        System.out.println("Multiplication");
     }
 }
