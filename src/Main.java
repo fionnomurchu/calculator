@@ -4,6 +4,7 @@ import Menu.MenuItems;
 import Menu.FeatureList;
 import Menu.Settings;
 import Menu.Calculators;
+
 //main class that acts as the entry point of the program
 public class Main {
 

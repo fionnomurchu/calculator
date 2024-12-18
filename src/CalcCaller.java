@@ -1,4 +1,5 @@
 //import statements for importing Calculator classes and menu funtionality
+
 import Calculators.ArithmeticCalculator;
 import Calculators.ArithmeticCalculatorInput;
 import Calculators.ProgrammingCalculator;
@@ -10,9 +11,11 @@ import Menu.Settings;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+
 //class responsible for handling Calculations 
 public class CalcCaller {
-
+    boolean option1;
     private String ans = "";
     private final Settings settings; // Use the shared Settings instance
 
@@ -36,7 +39,7 @@ public class CalcCaller {
         switch (calcChosen) {
             case "1":
                 ArrayList<String> finalList = ArithmeticCalculatorInput.input(ans);
-                boolean option1 = settings.isStepByStepEnabled();
+                option1 = settings.isStepByStepEnabled();
                 ans = arithmeticCalculator.arithmeticCalculations(finalList, option1);
                 break;
             case "2":

@@ -2,11 +2,13 @@ package Calculators;
 
 import Menu.Calculators;
 
+import java.awt.font.TextHitInfo;
 import java.util.ArrayList;
 
 public class ArithmeticCalculator extends Calculators{
-
+boolean option1;
     public String arithmeticCalculations(ArrayList<String> a, boolean option1) {
+        this.option1=option1;
         String result="";//stores result of calculations
 
         while(a.contains("(")) {
@@ -34,7 +36,7 @@ public class ArithmeticCalculator extends Calculators{
 
                     if (maxBrace - brace == counter2) {
                         subList = new ArrayList<>(a.subList(maxCounter + 1, counter));
-                        subList1 = new ArrayList<>(a.subList(maxCounter, counter + 1));
+
                         a.subList(maxCounter, counter + 1).clear();
                         counter++;
 

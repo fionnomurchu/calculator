@@ -36,6 +36,7 @@ public class Calculations {
         return String.valueOf(number1 - number2);
 
     }
+
 //method to perform multiplication
     static String multiply(String a, String b) {
         validateInputs(a, b, "multiplication");
@@ -153,6 +154,7 @@ public class Calculations {
         try {//exception handling
             double number1 = Double.parseDouble(a);
             double number2 = Double.parseDouble(b);
+
             //handles modulus by 0
             while (number2 == 0) {
                 System.out.println("Error: modulus by zero is not allowed.");
