@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ArithmeticCalculator extends Calculators{
 
     public String arithmeticCalculations(ArrayList<String> a, boolean option1) {
-        String result="";
+        String result="";//stores result of calculations
 
         while(a.contains("(")) {
 
@@ -16,6 +16,7 @@ public class ArithmeticCalculator extends Calculators{
             int maxBrace = 0;
             int maxCounter = 0;
             String iteration1 = "";
+            //identifies deepest bracket/parenthesis
             for (int counter = 0; counter < a.size(); counter++) {
                 if (a.get(counter).equals("(")) {
                     maxCounter = counter;

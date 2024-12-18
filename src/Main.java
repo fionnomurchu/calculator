@@ -1,15 +1,18 @@
+//Imports necessary classes for menu and calculator operations
 import java.util.Scanner;
 import Menu.MenuItems;
 import Menu.FeatureList;
 import Menu.Settings;
 import Menu.Calculators;
-
+//main class that acts as the entry point of the program
 public class Main {
+
+//main method that runs the program
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
         boolean option1 = true;
-
+//initialize menu and calcCaller
         MenuItems menu = new MenuItems();
         MenuItems featureList = new FeatureList();
         MenuItems calculators = new Calculators();
@@ -18,9 +21,9 @@ public class Main {
 
         label:
         while (true){
-            menu.display();
-            String option = input.nextLine();
-
+            menu.display();//displays main menu
+            String option = input.nextLine();//reads user input 
+//switch statement to handle users selection
             switch (option) {
                 case "1":
                     featureList.display();
@@ -34,9 +37,9 @@ public class Main {
                     break;
                 case "4":
                     break label;
-                default:
+                default://error handling for invalid input
                     System.err.println("Invalid input");
-                    menu.display();
+                    menu.display();//redisplays menu
                     break;
             }
         }

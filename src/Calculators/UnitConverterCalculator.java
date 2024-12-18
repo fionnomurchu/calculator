@@ -5,9 +5,10 @@ import Menu.Calculators;
 import java.util.Scanner;
 
 public class UnitConverterCalculator extends Calculators {
-
+//overrides runCalculator to perform conversion operations
     @Override
     public void runCalculator() {
+        //method for displaying meenu for what conversion user would like to do
         Scanner scanner = new Scanner(System.in);
         System.out.println("Unit Converter:");
         System.out.println("Available conversions:");
@@ -178,7 +179,7 @@ public class UnitConverterCalculator extends Calculators {
                     break;
             }
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input");
+          System.out.println("Invalid input");
         }
     }
 }

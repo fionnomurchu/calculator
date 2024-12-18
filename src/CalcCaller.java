@@ -1,3 +1,4 @@
+//import statements for importing Calculator classes and menu funtionality
 import Calculators.ArithmeticCalculator;
 import Calculators.ArithmeticCalculatorInput;
 import Calculators.ProgrammingCalculator;
@@ -9,7 +10,7 @@ import Menu.Settings;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//class responsible for handling Calculations 
 public class CalcCaller {
 
     private String ans = "";
@@ -31,7 +32,7 @@ public class CalcCaller {
         Calculators calculatorChoice = new Calculators();
 
         String calcChosen = calculatorChoice.calculatorChoice();
-
+        //switch statement used to select choice
         switch (calcChosen) {
             case "1":
                 ArrayList<String> finalList = ArithmeticCalculatorInput.input(ans);
@@ -47,10 +48,10 @@ public class CalcCaller {
             case "4":
                 matrixCalculator.runCalculator();
                 break;
-            default:
+            default://handeles invalid inputs
                 System.err.println("Invalid input");
-                calculators.display();
-                calcCaller();
+                calculators.display();//redisplays calculator menu
+                calcCaller();//restarts selection process
                 break;
         }
     }
