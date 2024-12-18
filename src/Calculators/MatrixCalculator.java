@@ -23,18 +23,20 @@ public class MatrixCalculator extends Calculators {
         matrix = new int[matrixSize][matrixSize];
         matrix2 = new int[matrixSize][matrixSize];
 //input values for first matrix
-        for (int row = 0; row < matrixSize; row++) {
+      for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
-                System.out.println("Enter the value for position (row " + (row+1) + ", column " + (colum+1) + "):");
-                try {
-                    matrix[row][colum] = scanner.nextInt();//fills in matrix1
-                }catch (InvalidInputException e){
-                    System.out.println(e.getMessage());
+                while (true) {
+                    System.out.println("Enter number for " + row + "," + colum);
+                    try {
+                        matrix[row][colum] = scanner.nextInt();//fills in matrix1
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Error:please enter a valid integer");
+                        scanner.next();
+                    }
                 }
-
-                }
+            }
         }
-
 //displays matrix 1 
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
@@ -47,14 +49,19 @@ public class MatrixCalculator extends Calculators {
         System.out.println("matrix #2");
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
-                System.out.println("Enter the value for position (row " + (row+1) + ", column " + (colum+1) + "):");
-                try {
-                    matrix2[row][colum] = scanner.nextInt();
-                }catch(InvalidInputException e){
-                    System.out.println(e.getMessage());
-                }
+            while (true) {
+
+                    System.out.println("Enter number for " + row + "," + colum);
+                    try {
+                        matrix2[row][colum] = scanner.nextInt();
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Error:please enter a valid integer");
+                        scanner.next();
+                    }
 
                 }
+            }
         }
 
 //displays matrix2
