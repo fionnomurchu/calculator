@@ -5,7 +5,7 @@ import Menu.Calculators;
 import java.util.Scanner;
 
 public class ProgrammingCalculator extends Calculators {
-
+//overrides runCalculator to run number conversion operations
     @Override
     public void runCalculator() {
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class ProgrammingCalculator extends Calculators {
                 System.out.println("Decimal: " + decimal);
                 System.out.println("Hexadecimal: " + Integer.toHexString(decimal).toUpperCase());
                 System.out.println("--------------------");
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {//catches invalid inputs 
                 System.out.println("Invalid binary number");
                 System.out.println("--------------------");
             }
@@ -37,7 +37,7 @@ public class ProgrammingCalculator extends Calculators {
                 System.out.println("Hexadecimal: " + Integer.toHexString(decimal).toUpperCase());
                 System.out.println("--------------------");
             } catch (NumberFormatException e) {
-                System.out.println("Invalid decimal number");
+                System.out.println("Invalid decimal number");//catches invalid inputs 
                 System.out.println("--------------------");
             }
         }
@@ -54,13 +54,13 @@ public class ProgrammingCalculator extends Calculators {
                 System.out.println("--------------------");
             }
             catch (NumberFormatException e) {
-                System.out.println("Invalid hexadecimal number");
+                System.out.println("Invalid hexadecimal number");//catches invalid inputs 
                 System.out.println("--------------------");
             }
         }
 
         else {
-            System.out.println("Invalid choice.");
+            System.out.println("Invalid choice.");//catches invalid inputs 
             System.out.println("--------------------");
         }
     }
