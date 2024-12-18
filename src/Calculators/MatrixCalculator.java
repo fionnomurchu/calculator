@@ -24,7 +24,7 @@ public class MatrixCalculator extends Calculators {
 //input values for first matrix
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
-                System.out.println("Enter number for " + row + "," + colum);
+                System.out.println("Enter the value for position (row " + (row+1) + ", column " + (colum+1) + "):");
                 try {
                     matrix[row][colum] = scanner.nextInt();//fills in matrix1
                 }catch (InvalidInputException e){
@@ -46,7 +46,7 @@ public class MatrixCalculator extends Calculators {
         System.out.println("matrix #2");
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
-                System.out.println("Enter number for " + row + "," + colum);
+                System.out.println("Enter the value for position (row " + (row+1) + ", column " + (colum+1) + "):");
                 try {
                     matrix2[row][colum] = scanner.nextInt();
                 }catch(InvalidInputException e){

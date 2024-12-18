@@ -171,8 +171,7 @@ public class Calculations {
     }
 
 
-
-//general method to validate inputs in case previous methods dont catch the error
+//reusable block of code to validate the inputs
     public static void validateInputs(String a, String b, String operation) {
         if (a == null || a.isEmpty()) {
             throw new InvalidInputException("Error: Invalid input for " + operation);
