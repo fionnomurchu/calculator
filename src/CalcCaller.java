@@ -11,9 +11,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CalcCaller {
+
+    private String ans = "";
+    private final Settings settings; // Use the shared Settings instance
+
+    public CalcCaller(Settings settings) {
+        this.settings = settings; // Constructor takes the shared Settings instance
+    }
+
     public void calcCaller(){
         Scanner input = new Scanner(System.in);
-        String ans = "";
 
         MenuItems calculators = new Calculators();
 
@@ -22,7 +29,6 @@ public class CalcCaller {
         Calculators unitConverterCalculator = new UnitConverterCalculator();
         Calculators matrixCalculator = new MatrixCalculator();
         Calculators calculatorChoice = new Calculators();
-        Settings settings = new Settings();
 
         String calcChosen = calculatorChoice.calculatorChoice();
 
@@ -30,8 +36,7 @@ public class CalcCaller {
             case "1":
                 ArrayList<String> finalList = ArithmeticCalculatorInput.input(ans);
                 boolean option1 = settings.isStepByStepEnabled();
-                String result = arithmeticCalculator.arithmeticCalculations(finalList, option1);
-                System.out.println(result);
+                ans = arithmeticCalculator.arithmeticCalculations(finalList, option1);
                 break;
             case "2":
                 programmingCalculator.runCalculator();

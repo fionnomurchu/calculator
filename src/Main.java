@@ -5,7 +5,6 @@ import Menu.Settings;
 import Menu.Calculators;
 
 public class Main {
-
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
@@ -15,7 +14,7 @@ public class Main {
         MenuItems featureList = new FeatureList();
         MenuItems calculators = new Calculators();
         Settings settings = new Settings();
-        CalcCaller calcCaller = new CalcCaller();
+        CalcCaller calcCaller = new CalcCaller(settings);
 
         label:
         while (true){
@@ -43,3 +42,6 @@ public class Main {
         }
     }
 }
+
+
+

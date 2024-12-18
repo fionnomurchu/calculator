@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class MatrixCalculator extends Calculators{
 
     Scanner scanner = new Scanner(System.in);
-    int[][] matrix;
-    int[][] matrix2;
-    int matrixSize;
-    int fionn=0;
-    int[][] newMatrix;
+    private int[][] matrix;
+    private int[][] matrix2;
+    private int matrixSize;
+    private int sumResult = 0;
+    private int[][] newMatrix;
 
 
 
@@ -73,7 +73,7 @@ public class MatrixCalculator extends Calculators{
                 square();
                 break;
             default:
-                System.out.println("invalid choice");
+                System.err.println("Invalid choice");
                 break;
 
         }
@@ -88,10 +88,10 @@ public class MatrixCalculator extends Calculators{
                 for (int counter = 0;counter<matrixSize;counter++) {
 
                     int b = matrix[counter][colum]*matrix2[row][counter];
-                    fionn += b;
+                    sumResult += b;
                 }
-                newMatrix[row][colum]= fionn;
-                fionn=0;
+                newMatrix[row][colum]= sumResult;
+                sumResult=0;
             }
         }
 
