@@ -16,7 +16,7 @@ public class MatrixCalculator extends Calculators {
 //overrides runCalculator to perform matrix calculations
     @Override
     public void runCalculator() {
-        System.out.println("enter size of a square matrix:");
+        System.out.println("enter size of a square matrix (e.g 3 for a 3x3 Matrix):");
         matrixSize = scanner.nextInt();
 //initialize matrix based on inputted size 
         matrix = new int[matrixSize][matrixSize];
@@ -25,8 +25,13 @@ public class MatrixCalculator extends Calculators {
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
                 System.out.println("Enter number for " + row + "," + colum);
-                matrix[row][colum] = scanner.nextInt();//fills in matrix1
-            }
+                try {
+                    matrix[row][colum] = scanner.nextInt();//fills in matrix1
+                }catch (InvalidInputException e){
+                    System.out.println(e.getMessage());
+                }
+
+                }
         }
 
 //displays matrix 1 
@@ -42,8 +47,13 @@ public class MatrixCalculator extends Calculators {
         for (int row = 0; row < matrixSize; row++) {
             for (int colum = 0; colum < matrixSize; colum++) {
                 System.out.println("Enter number for " + row + "," + colum);
-                matrix2[row][colum] = scanner.nextInt();
-            }
+                try {
+                    matrix2[row][colum] = scanner.nextInt();
+                }catch(InvalidInputException e){
+                    System.out.println(e.getMessage());
+                }
+
+                }
         }
 
 //displays matrix2
