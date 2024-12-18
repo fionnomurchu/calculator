@@ -30,7 +30,7 @@ public class MatrixCalculator extends Calculators {
                     try {
                         matrix[row][colum] = scanner.nextInt();//fills in matrix1
                         break;
-                    } catch (InputMismatchException e) {
+                    } catch (NumberFormatException e) {
                         System.out.println("Error:please enter a valid integer");
                         scanner.next();
                     }
@@ -55,7 +55,7 @@ public class MatrixCalculator extends Calculators {
                     try {
                         matrix2[row][colum] = scanner.nextInt();
                         break;
-                    } catch (InputMismatchException e) {
+                    } catch (NumberFormatException e) {
                         System.out.println("Error:please enter a valid integer");
                         scanner.next();
                     }
